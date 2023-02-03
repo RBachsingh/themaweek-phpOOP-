@@ -1,104 +1,113 @@
 <?php
 
 namespace classes;
+class Person
 {
-    class person
+    public $name;
+    public $isStudent;
+    public $averageGrade;
+    protected $gender;
+    private $age;
+
+    function __construct(string $name, int $age, string $gender, bool $isStudent, float $averageGrade)
     {
-        public $name;
-        public $isStudent;
-        public $avarageGrade;
-        protected $gender;
-        private $age;
-        function __construct(string $name, int $age, string $gender)
-        {
         $this->name = $name;
         $this->age = $age;
         $this->gender = $gender;
+        $this->isStudent = $isStudent;
+        $this->averageGrade = $averageGrade;
         echo "A new Person-object has been created" . "<br>";
         echo "The property name of this object is: $name" . "<br>";
-        }
-        public function setGender(string $gender){
-            $this->gender = $gender;
-        }
-        public function getGender()
-        {
-            return $this->gender;
-        }
+    }
 
-        /**
-         * @param string $name
-         */
-        public function setName($name)
-        {
-            $this->name = $name;
-        }
+    public function setGender(string $gender)
+    {
+        $this->gender = $gender;
+    }
 
-        /**
-         * @return string
-         */
-        public function getName()
-        {
-            return $this->name;
-        }
+    public function getGender()
+    {
+        return $this->gender;
+    }
 
-        /**
-         * @param int $age
-         */
-        public function setAge($age)
-        {
-            $this->age = $age;
-        }
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
 
-        /**
-         * @return int
-         */
-        public function getAge()
-        {
-            return $this->age;
-        }
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 
-        /**
-         * @param mixed $isStudent
-         */
-        public function setIsStudent($isStudent)
-        {
-            $this->isStudent = $isStudent;
-        }
+    /**
+     * @param int $age
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
+    }
 
-        /**
-         * @return mixed
-         */
-        public function getIsStudent()
-        {
-            return $this->isStudent;
-        }
+    /**
+     * @return int
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
 
-        /**
-         * @param mixed $avarageGrade
-         */
-        public function setAvarageGrade($avarageGrade)
-        {
-            $this->avarageGrade = $avarageGrade;
-        }
+    /**
+     * @param bool $isStudent
+     */
+    public function setIsStudent(bool $isStudent)
+    {
+        $this->isStudent = $isStudent;
+    }
 
-        /**
-         * @return mixed
-         */
-        public function getAvarageGrade()
-        {
-            return $this->avarageGrade;
-        }
-        function getGegevens(){
-            $Gegevens =
+    /**
+     * @return bool
+     */
+    public function getIsStudent()
+    {
+        return $this->isStudent;
+    }
+
+    /**
+     * @param float $averageGrade
+     */
+    public function setAverageGrade($averageGrade)
+    {
+        $this->averageGrade = $averageGrade;
+    }
+
+    /**
+     * @return float
+     */
+    public function getAverageGrade()
+    {
+        return $this->averageGrade;
+    }
+
+    function getGegevens()
+    {
+        $Gegevens =
             "\nDe gegevens van " . $this->name . " zijn:" .
             "\nLeeftijd: " . $this->age .
             "\nGeslacht: " . $this->gender .
-            "\nStudent:" . $this->IsStudent .
-            "\nGemiddelde cijfer: " . $this->avarageGrade;
-            return $Gegevens;
-        }
-        function setGegevens(){
-           return $this->Gegevens;
-        }
+            "\nStudent:" . $this->isStudent .
+            "\nGemiddelde cijfer: " . $this->averageGrade;
+        return $Gegevens;
+    }
+
+    function setGegevens()
+    {
+
+        return $this->Gegevens;
     }
 }
